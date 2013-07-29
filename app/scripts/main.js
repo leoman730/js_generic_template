@@ -37,7 +37,11 @@ var Course = function(){
 			});
 
 			$('.content').append(this.courseView.render().el);
+		},
 
+		exportHtml: function(){
+			console.log($('.content').html());
+			return true;
 		}
 	}
 
@@ -50,7 +54,26 @@ $('document').ready(function(){
 
 
 	//Setup nicEdit for editable field
+	var myNicEditor = new nicEditor({
+		'iconsPath': 'scripts/nicEditorIcons.gif', 
+		'fullPanel': true
+	});	
 	
-	
-	
+	myNicEditor.setPanel('editPanel');
+
+	// myNicEditor.panelInstance('cTitle');
+	$('.content .editable').each(function(){
+		var id = $(this).attr('id');
+		var editor = myNicEditor.addInstance(id);
+
+	});	
+
+
+	//update model on text change
+	$('.content').delegate('.editable', 'blur', function(){
+		var id = $(this).attr('id');
+		course.courseModel.set(id, $(this).html());
+	})
+
+
 });

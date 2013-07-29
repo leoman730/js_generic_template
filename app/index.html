@@ -17,9 +17,12 @@
     </head>
     <body>
         <div class="container-fluid">
+            <div class="row-fluid" id="editPanel">
+            </div>
             <div class="row-fluid">
                 <div class="span1"></div>
-                <div class="span10 content">content</div>
+                <div class="span10 content">content
+                </div>
                 <div class="span1"></div>
             </div>
         </div>
@@ -27,8 +30,8 @@
 
 
         <script type='text/template' id='template_1'>
-            <div id='cTitle'><%=cTitle%></div>
-            <div id='cDescription'><%=cDescription%></div>
+            <div id='cTitle' class='editable'><%=cTitle%></div>
+            <div id='cDescription' class='editable'><%=cDescription%></div>
         </script>
 
 
