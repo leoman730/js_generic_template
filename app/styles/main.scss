@@ -1,0 +1,12 @@
+$iconSpritePath: "../images/glyphicons-halflings.png";
+$iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
+
+@import 'sass-bootstrap/lib/bootstrap';
+
+.container {
+	background-color: light-gray;
+}
+
+.content {
+	background-color: #dceaf4;
+}
