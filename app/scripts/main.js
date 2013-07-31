@@ -48,7 +48,32 @@ var Course = function(){
 };
 
 
+
+function getBase64Image() { 
+	
+	p=document.getElementById("picField").value;
+	var img = new Image();
+	img.src = 'images/logo.png';
+	var canvas = document.createElement("canvas"); 
+	canvas.width = img.width; 
+	canvas.height = img.height; 
+	var ctx = canvas.getContext("2d"); 
+	ctx.drawImage(img, 0, 0); 
+	var dataURL = canvas.toDataURL("image/png"); 
+	var dataURL = canvas.toDataURL("image/png"); 
+	var r=dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+	base64=r;
+	alert(base64);   
+ 
+} 
+
+
 $('document').ready(function(){
+	//caching image 
+	var img = new Image();
+	img.src = 'images/logo.png';
+
+
 	course = new Course();
 	course.init();
 
@@ -74,6 +99,30 @@ $('document').ready(function(){
 		var id = $(this).attr('id');
 		course.courseModel.set(id, $(this).html());
 	})
+
+
+	//track mouse movement pop up control dock when reaching bottom eadge
+   $(document).mousemove(function(e){
+      
+    if (e.pageY + 200 > $(window).height()) {
+      	
+      	if (typeof popupdelay === 'undefined' ) {
+			popupdelay = window.setTimeout(function(){
+				$('#controlPanel').slideDown(300, function(){});
+				popupdelay = undefined;
+      		}, 1000);
+      	} 
+    } else {
+    	if (typeof popupdelay !== 'undefined') {
+    		console.log('hi here');
+    		console.log(typeof popupdelay);
+    		window.clearTimeout(popupdelay);
+    		popupdelay = undefined;
+    		$('#controlPanel').slideUp(300, function(){});
+    	}
+    }
+
+   }); 
 
 
 });

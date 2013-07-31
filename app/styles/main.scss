@@ -3,6 +3,10 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
 
 @import 'sass-bootstrap/lib/bootstrap';
 
+.container-fluid {
+    padding: 0px;
+}
+
 .container {
 	background-color: light-gray;
 }
@@ -13,5 +17,14 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
 	#cTitle {
 		color: red;
 	}
+}
 
+#controlPanel {
+	height: 200px;
+	width: 100%;
+	position:absolute;
+    bottom:0;
+    background: rgba(0,0,0, 0.7);
+    display: none;
+    color: #fff;
 }
