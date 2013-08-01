@@ -49,29 +49,32 @@ var Course = function(){
 
 
 
-function getBase64Image() { 
-	
-	p=document.getElementById("picField").value;
+function setBgImage(src) {
 	var img = new Image();
-	img.src = 'images/logo.png';
-	var canvas = document.createElement("canvas"); 
-	canvas.width = img.width; 
-	canvas.height = img.height; 
-	var ctx = canvas.getContext("2d"); 
-	ctx.drawImage(img, 0, 0); 
-	var dataURL = canvas.toDataURL("image/png"); 
-	var dataURL = canvas.toDataURL("image/png"); 
-	var r=dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
-	base64=r;
-	alert(base64);   
- 
+	img.src = src;
+
+
+	window.setTimeout(function(){ 
+		canvas = document.createElement("canvas"); 
+		canvas.width = img.width; 
+		canvas.height = img.height; 
+		var ctx = canvas.getContext("2d"); 
+		ctx.drawImage(img, 0, 0); 
+		var dataURL = canvas.toDataURL("image/png"); 
+		//var dataURL = canvas.toDataURL("image/png"); 
+		//var r=dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+		//base64=r;
+		console.log(dataURL);   
+		//$('#bg_img').attr('src', dataURL);
+	 }, 2000);
 } 
+
 
 
 $('document').ready(function(){
 	//caching image 
-	var img = new Image();
-	img.src = 'images/logo.png';
+	img = new Image();
+	img.src = 'images/ball.png';
 
 
 	course = new Course();
@@ -100,6 +103,28 @@ $('document').ready(function(){
 		course.courseModel.set(id, $(this).html());
 	})
 
+	
+	// update bg image
+	$('#setBgBtn').click(function(){
+		var src64 = setBgImage($('#bg').val());
+		 		
+	});
+
+	// update font size
+	$('#fontSize').on('change', function(e){
+		$('.content').css({
+			'font-size': $(this).val()
+		});
+	});
+
+
+	// update font style 
+	$('#fontStyle').on('change', function(e){
+		$('.content').css({
+			'font-family': $(this).val() 
+		});
+	});
+
 
 	//track mouse movement pop up control dock when reaching bottom eadge
    $(document).mousemove(function(e){
@@ -114,8 +139,6 @@ $('document').ready(function(){
       	} 
     } else {
     	if (typeof popupdelay !== 'undefined') {
-    		console.log('hi here');
-    		console.log(typeof popupdelay);
     		window.clearTimeout(popupdelay);
     		popupdelay = undefined;
     		$('#controlPanel').slideUp(300, function(){});

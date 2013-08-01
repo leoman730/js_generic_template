@@ -3,6 +3,11 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
 
 @import 'sass-bootstrap/lib/bootstrap';
 
+body {
+    font-family: 'Helvetica';
+    font-size: 12px;
+}
+
 .container-fluid {
     padding: 0px;
 }
@@ -20,6 +25,7 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
 }
 
 #controlPanel {
+	padding: 10px 15px;
 	height: 200px;
 	width: 100%;
 	position:absolute;

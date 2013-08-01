@@ -18,20 +18,23 @@
     <body>
         <div class="container-fluid">
             <div class="row-fluid" id="editPanel">
+		<img id='bg_img' />
             </div>
             <div class="row-fluid">
                 <div class="span1"></div>
-                <input type="text" id='picField' value='http://staging.nyulaw.me/sites/all/themes/nyulaw/logo.png' />
                 <div class="span10 content"></div>
                 <div class="span1"></div>
             </div>
             <div class="row-fluid" id="controlPanel">
                 <label for="fontSize">Font size</label>
-                <input type="text" class="form-control" id="fontSize" /> px
+                <input type="text" class="form-control" value='12px' id="fontSize" />
 
                 <label for="fontStyle">Font Style</label>
-                <input type="text" class="form-control" id="style" /> px
+                <input type="text" class="form-control" value='helvetica' id="fontStyle" />
 
+                <label for="fontStyle">Background Image</label>
+                <input type="text" class="form-control"  id="bg" value='images/ball.png' />
+		<a class="btn btn-default" href="#" id='setBgBtn'>Set</a>
             </div>            
         </div>
 
