@@ -8,6 +8,24 @@ body {
     font-size: 12px;
 }
 
+#curtain {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    top: -2000px;
+
+    -webkit-transition:top 3s ease-in; 
+}
+
+#curtain.show {
+    top:0px;
+}
+
+#curtain.hide {
+    top: -2000px;
+}
+
 .container-fluid {
     padding: 0px;
 }
