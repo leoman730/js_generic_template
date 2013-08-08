@@ -19,13 +19,17 @@
         <div class="container-fluid">
 	    <img src='images/curtain.jpg' id='curtain'>
             <div class="row-fluid" id="editPanel">
-		<img id='bg_img' />
             </div>
             <div class="row-fluid">
                 <div class="span1"></div>
                 <div class="span10 content"></div>
                 <div class="span1"></div>
             </div>
+
+            <div class="row-fluid" id="copyright">
+                Copyright <span id='cpyear'>2010</span>. All rights reserved.
+            </div>
+    
             <div class="row-fluid" id="controlPanel">
                 <label for="fontSize">Font size</label>
                 <input type="text" class="form-control" value='12px' id="fontSize" />
@@ -35,17 +39,104 @@
 
                 <label for="fontStyle">Background Image</label>
                 <input type="text" class="form-control"  id="bg" value='images/ball.png' />
-		<a class="btn btn-default" href="#" id='setBgBtn'>Set</a>
+
+		          <a class="btn btn-default" href="#" id='setBgBtn'>Set</a>
+
+
+                <label for="tempalte">Template</label>
+                <select class="form-control" id="template">
+                  <option value="template_blue">Metro Blue</option>
+                  <option value="template_green">Metro Green</option>
+                  <option value="template_simplicity">Simplicity</option>
+                </select>
+
             </div>            
         </div>
 
 
 
-        <script type='text/template' id='template_1'>
-            <div id='cTitle' class='editable'><%=cTitle%></div>
-            <div id='cDescription' class='editable'><%=cDescription%></div>
+        <script type='text/template' id='template_blue'>
+            <div class='template_blue'>
+                <div id='cTitle' class='editable'><%=cTitle%></div>
+                
+                <div class="navbar">
+                    <div class="container">
+                        <ul class="nav nav-tabs" id="myTab">
+                          <li class="active"><a href="#general">General</a></li>
+                          <li><a href="#objective">Objective</a></li>
+                          <li><a href="#material">Material</a></li>
+                          <li><a href="#schedule">Schedule</a></li>
+                          <li><a href="#grading">Grading Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tab-content">
+                    <div class="tab-pane active" id="general">
+                        <img id='bg_img' src='images/photo.jpg' />
+                        <div id='cDescription' class='editable'><%=cDescription%></div>
+                    </div>
+                    <div class="tab-pane" id="objective">
+                        <div id='cObjective' class='editable'><%=cObjective%></div>
+                    </div>
+                  
+                    <div class="tab-pane" id="material">
+                        <div id='cMaterial' class='editable'><%=cMaterial%></div>
+                    </div>
+                  
+                    <div class="tab-pane" id="schedule">
+                        <div id='cSchedule' class='editable'><%=cSchedule%></div>
+                    </div>
+                  
+                    <div class="tab-pane" id="grading">
+                        <div id='cGrading' class='editable'><%=cGrading%></div>
+                    </div>
+                </div>
+            </div>
         </script>
 
+
+
+
+        <script type='text/template' id='template_green'>
+            <div class='template_green'>
+                <div id='cTitle' class='editable'><%=cTitle%></div>
+                
+                <div class="navbar">
+                    <div class="container">
+                        <ul class="nav nav-tabs" id="myTab">
+                          <li class="active"><a href="#general">General</a></li>
+                          <li><a href="#objective">Objective</a></li>
+                          <li><a href="#material">Material</a></li>
+                          <li><a href="#schedule">Schedule</a></li>
+                          <li><a href="#grading">Grading Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tab-content">
+                    <div class="tab-pane active" id="general">
+                        <img id='bg_img' src='images/photo.jpg' />
+                        <div id='cDescription' class='editable'><%=cDescription%></div>
+                    </div>
+                    <div class="tab-pane" id="objective">
+                        <div id='cObjective' class='editable'><%=cObjective%></div>
+                    </div>
+                  
+                    <div class="tab-pane" id="material">
+                        <div id='cMaterial' class='editable'><%=cMaterial%></div>
+                    </div>
+                  
+                    <div class="tab-pane" id="schedule">
+                        <div id='cSchedule' class='editable'><%=cSchedule%></div>
+                    </div>
+                  
+                    <div class="tab-pane" id="grading">
+                        <div id='cGrading' class='editable'><%=cGrading%></div>
+                    </div>
+                </div>
+            </div>
+        </script>
 
 
         <!--[if lt IE 7]>
@@ -71,7 +162,7 @@
 
         <!-- build:js(.tmp) scripts/coffee.js -->
         <script src="scripts/hello.js"></script>
-        <!-- endbuild -->
+        <!-- endbuild <--></-->
 
         <!-- build:js scripts/plugins.js -->
         <script src="components/sass-bootstrap/js/bootstrap-affix.js"></script>

@@ -34,21 +34,124 @@ body {
 	background-color: light-gray;
 }
 
-.content {
-	background-color: #dceaf4;
-
-	#cTitle {
-		color: red;
-	}
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
+
+#editPanel {
+    position: fixed;
+    top:0px;
+}
 #controlPanel {
-	padding: 10px 15px;
-	height: 200px;
-	width: 100%;
-	position:absolute;
+    padding: 10px 15px;
+    min-height: 200px;
+    width: 100%;
+    position:fixed;
     bottom:0;
     background: rgba(0,0,0, 0.7);
     display: none;
     color: #fff;
 }
+
+#copyright {
+    margin-top: 20px;
+    text-align: center;
+    color: #666;
+}
+
+/* template 1 */
+.template_blue {
+    #bg_img { display: block; float: left; margin: 0px 20px 20px 0px;}    
+
+    #cTitle {
+        font-size: 40px;
+        color: rgb(27, 161, 226);
+        line-height: 44px;
+    }
+    
+    table {
+        tr, td {
+            background-color: transparent;
+        }
+    }
+
+    .tab-content {
+        border-top: 5px solid #178ec7;
+        background-color: #1ba1e2;
+        min-height: 300px;
+        padding: 20px;
+        color: #fff;
+        font-size: 14px;
+        line-height: 20px;
+        a {
+            text-decoration: underline;
+            color: #fff;
+        }
+    }
+
+    .navbar {
+        margin-bottom: 0px;
+        margin-top: 20px;
+        font-size: 15px;
+        .nav {
+            .active {
+                a, a:hover {
+                    background-color: #fff;
+                    box-shadow: rgba(0,0,0, 0);
+                }
+            }
+
+        }
+    }    
+}
+
+
+.template_green {
+    #bg_img { display: block; float: left; margin: 0px 20px 20px 0px;}    
+
+    #cTitle {
+        font-size: 40px;
+        color: rgb(27, 161, 226);
+        line-height: 44px;
+    }
+    
+    table {
+        tr, td {
+            background-color: transparent;
+        }
+    }
+
+    .tab-content {
+        border-top: 5px solid #178ec7;
+        background-color: #43c83c;
+        min-height: 300px;
+        padding: 20px;
+        color: #fff;
+        font-size: 14px;
+        line-height: 20px;
+        a {
+            text-decoration: underline;
+            color: #fff;
+        }
+    }
+
+    .navbar {
+        margin-bottom: 0px;
+        margin-top: 20px;
+        font-size: 15px;
+        .nav {
+            .active {
+                a, a:hover {
+                    background-color: #fff;
+                    box-shadow: rgba(0,0,0, 0);
+                }
+            }
+
+        }
+    }    
+}
+
+
+
