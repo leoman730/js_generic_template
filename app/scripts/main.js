@@ -70,7 +70,7 @@ var Course = function(){
 
 			//Setup nicEdit for editable field
 			this.myNicEditor = new nicEditor({
-				'iconsPath': 'scripts/nicEditorIcons.gif', 
+				'iconsPath': 'images/nicEditorIcons.gif', 
 				'fullPanel': true
 			});	
 			
@@ -93,14 +93,26 @@ var Course = function(){
 
 		},
 		exportHtml: function(){
-			console.log($('.content').html());
+			var head = $('head').html();
+			var body = '<body>' + $('#main').html() + $('#scriptsContainer').html() + '</body>';
+			
+			var win = window.open('', '_blank', 'toolbar=0,location=0,menubar=0');
+
+
+			var source = String( head + body );
+
+			source = '<pre>' +  '&lt;!DOCTYPE html>\n&lt;html>\n' + 
+					source .replace(/[<>]/g, function(m) { return {'<':'&lt;','>':'&gt;'}[m]})
+					 .replace(/((ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?)/gi,'<a href="$1">$1</a>')
+					 .replace(/editable/gi, '') + '\n&lt;/html></pre>';
+			win.document.write(source);
+
+
 			return true;
 		}
 	}
 
 };
-
-
 
 function setBgImage(src) {
 	var img = new Image();
@@ -199,6 +211,7 @@ $('document').ready(function(){
 
    }); 
 
+   	// activate tab
    	if ($('#myTab').length > 0) {
    		$('body').delegate('#myTab a', 'click', function(e){
    			e.preventDefault();
@@ -206,5 +219,9 @@ $('document').ready(function(){
    		});
    	};
 
+   	// export 
+   	$('#export').on('click', function(e){
+   		course.exportHtml();
+   	});
 
 });
