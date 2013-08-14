@@ -63,7 +63,7 @@ body {
 
 /* template 1 */
 .template_blue {
-    #bg_img { display: block; float: left; margin: 0px 20px 20px 0px;}    
+    #bg_img { display: block; float: left; margin: 0px 20px 20px 0px; width: 200px; height: 300px;}    
 
     #cTitle {
         font-size: 40px;
@@ -110,7 +110,7 @@ body {
 
 
 .template_green {
-    #bg_img { display: block; float: left; margin: 0px 20px 20px 0px;}    
+    #bg_img { display: block; float: right; margin: 0px 20px 20px 0px; width: 200px; height: 300px;}    
 
     #cTitle {
         font-size: 40px;

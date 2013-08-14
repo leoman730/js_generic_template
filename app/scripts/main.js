@@ -70,7 +70,7 @@ var Course = function(){
 
 			//Setup nicEdit for editable field
 			this.myNicEditor = new nicEditor({
-				'iconsPath': 'images/nicEditorIcons.gif', 
+				'iconsPath': 'http://js.elab.io/images/nicEditorIcons.gif', 
 				'fullPanel': true
 			});	
 			
